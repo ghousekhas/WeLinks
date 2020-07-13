@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator, Header } from '@react-navigation/stack';
 import * as Notiifications from 'expo-notifications';
 import Introduction from './screens/Introduction'
 
@@ -20,7 +20,7 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Introduction" component={Introduction}/>
+        <Stack.Screen style={header: null} name="Introduction" component={Introduction}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -35,26 +35,37 @@ const slides = [
   }];
 
 
-  _onDone = () => {
-    // User finished the introduction. Show real app through
-    // navigation or simply by controlling state
-    showRealApp= true;
-  };
-
-const Introduction= ()=>{
-      /*render(){
+   
+export default class Introduction extends React.Component{
+    _renderItem = ({ item }) => {
+        return (
+          <View style={styles.slide}>
+            <Text style={styles.title}>{item.title}</Text>
+            <Image source={item.image} />
+            <Text style={styles.text}>{item.text}</Text>
+          </View>
+        );
+      }
+     _onDone = () => {
+        // User finished the introduction. Show real app through
+        // navigation or simply by controlling state
+        showRealApp=true;
+      }
+    
+      render(){
         /*if (this.state.showRealApp) {
           return <App />;
         } else {*/
           return <AppIntroSlider renderItem={this._renderItem} data={slides} onDone={this._onDone}/>;
        /* }*/
-      /*}*/
+      }
     }
 
 
 const styles= StyleSheet.create({
     slide:{
-        flex: 1
+        height:300,
+        width:300
     },
     title:{
         fontSize: 30
@@ -68,4 +79,3 @@ const styles= StyleSheet.create({
         fontSize: 20
     }
 });
-export default Introduction;
