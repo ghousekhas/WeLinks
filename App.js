@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator, Header } from '@react-navigation/stack';
 import * as Notiifications from 'expo-notifications';
 import Introduction from './screens/Introduction'
+import LoginScreen from './screens/Login'
 
 /*function HomeScreen() {
   return (
@@ -20,7 +21,10 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen style={header: null} name="Introduction" component={Introduction}/>
+       
+        <Stack.Screen name = "Login" component={LoginScreen}/>
+      
+
       </Stack.Navigator>
     </NavigationContainer>
   );
