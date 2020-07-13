@@ -2,9 +2,10 @@
 import * as React from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator, Header } from '@react-navigation/stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import * as Notiifications from 'expo-notifications';
 import Introduction from './screens/Introduction'
+import AddAddress from './screens/AddAddress';
 
 /*function HomeScreen() {
   return (
@@ -20,11 +21,17 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen style={header: null} name="Introduction" component={Introduction}/>
+        <Stack.Screen name='AddAddress' component={AddAddress} options={{
+          headerShown: false
+        }}/>
+        <Stack.Screen  name="Introduction" component={Introduction} 
+        options={{
+          headerShown: false
+        }}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
+  }
 
 export default App;
 

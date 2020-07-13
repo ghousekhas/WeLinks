@@ -7,7 +7,7 @@ var showRealApp=false;
 const slides = [
     {
       key: 'one',
-      title: 'Title 1',
+      title: 'Some lorem ipsum dolor amet  1',
       text: 'Description.\nSay something cool',
       image: require('../assets/1.jpg'),
       backgroundColor: '#59b2ab',
@@ -39,9 +39,9 @@ const slides = [
 export default class Introduction extends React.Component{
     _renderItem = ({ item }) => {
         return (
-          <View style={styles.slide}>
+          <View style={{...styles.slide ,backgroundColor: item.backgroundColor}}>
             <Text style={styles.title}>{item.title}</Text>
-            <Image source={item.image} />
+            <Image style={styles.image} source={item.image} />
             <Text style={styles.text}>{item.text}</Text>
           </View>
         );
@@ -64,18 +64,31 @@ export default class Introduction extends React.Component{
 
 const styles= StyleSheet.create({
     slide:{
-        height:300,
-        width:300
+        marginTop: 30,
+        backgroundColor: 'rgba(255,0,0,0)',
+        flex: 1,
+        flexDirection: 'column',
+        alignContent: 'center',
+        justifyContent: 'flex-start',
+        paddingBottom: 200,
     },
     title:{
-        fontSize: 30
+        fontSize: 30,
+        textAlign: 'center',
+        marginLeft: 20,
+        padding: 10,
+        marginBottom: 50,
+        backgroundColor: 'rgba(0,0,0,0)'
     },
     image:{
-        height: 300,
-        width: 300,
-        alignContent: 'center',
+        height:300,
+        width:300,
+        alignSelf: 'center'
+    
     },
     text:{
-        fontSize: 20
+        fontSize: 20,
+
+
     }
 });
