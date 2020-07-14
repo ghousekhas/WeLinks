@@ -10,6 +10,7 @@ import LoginScreen from './screens/Login';
 import City from './screens/City';
 import About from './screens/About';
 import AddAddress from './screens/AddAddress';
+import Homescreen from './screens/Homescreen';
 /*function HomeScreen() {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -24,6 +25,9 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
+        <Stack.Screen name='Homescreen' component={Homescreen} options={{
+          headerShown: false 
+        }}/>
         <Stack.Screen name='AddAddress' component={AddAddress} options={{
           headerShown: false
         }}/>
@@ -71,5 +75,3 @@ const styles = StyleSheet.create({
     color: '#0000FF'
   }
 });*/
-
-export default App;
