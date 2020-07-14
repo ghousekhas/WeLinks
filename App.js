@@ -3,14 +3,13 @@ import * as React from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import * as Notiifications from 'expo-notifications';
+import * as Notifications from 'expo-notifications';
 import Introduction from './screens/Introduction'
 import Otp from './screens/Otp';
 import LoginScreen from './screens/Login';
 import City from './screens/City';
 import About from './screens/About';
 import AddAddress from './screens/AddAddress';
-import LoginScreen from './screens/Login'
 
 
 /*function HomeScreen() {
@@ -27,13 +26,7 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        
-
-      <Stack.Navigator>
-
-        <Stack.Screen name='AddAddress' component={AddAddress} options={{
-          headerShown: false
-        }}/>
+      
         <Stack.Screen  name="Introduction" component={Introduction} 
         options={{
           headerShown: false
@@ -47,4 +40,6 @@ function App() {
     </NavigationContainer>
   );  
 }
+
+export default App;
 
