@@ -6,6 +6,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import * as Notiifications from 'expo-notifications';
 import Introduction from './screens/Introduction'
 <<<<<<< HEAD
+<<<<<<< HEAD
 import Otp from './screens/Otp';
 import LoginScreen from './screens/Login';
 import City from './screens/City';
@@ -17,6 +18,10 @@ import AddAddress from './screens/AddAddress';
 import LoginScreen from './screens/Login'
 >>>>>>> 13e537a7b846a03431596776edec53a9d45ebe10
 >>>>>>> 8329e250ef2b3cda7a2c977f30c7daac3825b9fc
+=======
+import AddAddress from './screens/AddAddress';
+import LoginScreen from './screens/Login';
+>>>>>>> fe886f08d4c11aeba9be3dbc4ac4b024feab8cb8
 
 /*function HomeScreen() {
   return (
@@ -37,7 +42,6 @@ function App() {
         
 =======
       <Stack.Navigator>
-<<<<<<< HEAD
         <Stack.Screen name='AddAddress' component={AddAddress} options={{
           headerShown: false
         }}/>
@@ -45,6 +49,7 @@ function App() {
         options={{
           headerShown: false
         }}/>
+<<<<<<< HEAD
 =======
        
 >>>>>>> 8329e250ef2b3cda7a2c977f30c7daac3825b9fc
@@ -55,6 +60,9 @@ function App() {
       
 
 >>>>>>> 13e537a7b846a03431596776edec53a9d45ebe10
+=======
+        <Stack.Screen name = "Login" component={LoginScreen}/>
+>>>>>>> fe886f08d4c11aeba9be3dbc4ac4b024feab8cb8
       </Stack.Navigator>
     </NavigationContainer>
   );
