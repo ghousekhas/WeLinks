@@ -1,31 +1,70 @@
-import React from 'react';
+import React, { useState } from 'react';
+// import * as firebase from "firebase/app";
+// import "firebase/auth";
+// import "firebase/analytics";
+
 import {Text,View,StyleSheet,TextInput, Dimensions} from 'react-native';
 import { Defs } from 'react-native-svg';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import SubmitButton from './components/SubmitButton';
 
 
-const Otp = ({navigation}) => {
+
+const Otp = ({route,navigation}) => {
+
+    var firebaseConfig = {
+        apiKey: "AIzaSyAMNh-ci1hhnsvzgCbbuqyuWVzScUr5E54",
+        authDomain: "welinks-b80f2.firebaseapp.com",
+        databaseURL: "https://welinks-b80f2.firebaseio.com",
+        projectId: "welinks-b80f2",
+        storageBucket: "welinks-b80f2.appspot.com",
+        messagingSenderId: "887049508481",
+        appId: "1:887049508481:web:db88dbac3fd71d2ebd9f80",
+        measurementId: "G-B3532FWL44"
+      };
+   //   firebase.initializeApp(firebaseConfig);
+   const num = route.params;
+   const numDisplay = num.charAt(0) + 'XXXXXXXX' + num.charAt(9)
+
+//    const [one,sOne] = useState('');
+//    const[two,sTwo] = useState('')
+//    const[three,sThree] = useState('')
+
+//    const[four,sFour] = useState('')
+  
     return(<View style = {style.mainContainer}>
-        <Text style={style.text}>We sent a '4-digit OTP' on {"\n"}     +91 9xxxxxxxxx6 </Text>
+        <Text style={style.text}>We sent a '4-digit OTP' on {"\n"}     +91 {numDisplay} </Text>
         <Text style={style.desc}>Please enter the OTP below to complete the verification process. </Text>
        <View style = {style.view}>
        <TextInput style={style.input}  maxLength = {1}
                 keyboardType = {"number-pad"}
-                    on
+                // onChangeText={(one) => {
+                //     sOne(one)
+                    
+                    
+                // }}
+               
+                    
                 />
        <TextInput style={style.input} maxLength = {1}
-                keyboardType = {"number-pad"}/>
+                keyboardType = {"number-pad"}
+              
+                />
        <TextInput style={style.input} maxLength = {1}
-                keyboardType = {"number-pad"}/>
+                keyboardType = {"number-pad"}
+                
+                />
        <TextInput style={style.input} maxLength = {1}
-                keyboardType = {"number-pad"}/>
+                keyboardType = {"number-pad"}
+                
+                />
 
        </View>
        <Text style={style.resend}>Resend OTP </Text>
        <SubmitButton text='Submit'
            onTouch={()=>{
-               navigation.navigate('City')
+              // console.log('Your number was' + num)
+                 navigation.navigate('City')
            }}
        />
      

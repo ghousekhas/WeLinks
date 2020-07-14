@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Text,View,StyleSheet,TextInput, Dimensions} from 'react-native';
 import { Defs } from 'react-native-svg';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator, Header } from '@react-navigation/stack';
 import SubmitButton from './components/SubmitButton';
+import Toast from 'react-native-simple-toast';
 
 const authenticate= ({ navigation })=>{
-    console.log('otp')
+   // console.log('otp')
 //navigation.navigate('OTP')
 };
 
 const LoginScreen = ({navigation}) => {
+    const [number,setNumber] = useState('');
     return(
     <View style={LoginScreenStyle.mainContainer}>
         <Text style = {LoginScreenStyle.titleStyle}>Mobile Verification</Text>
@@ -22,13 +24,21 @@ const LoginScreen = ({navigation}) => {
             <TextInput style = {LoginScreenStyle.textInputStyle}
                 maxLength = {10}
                 keyboardType = {"number-pad"}
+                onChangeText={(number)=>{
+                    setNumber(number)
+                }}
+                defaultValue={number}
             />
         </View>
         <Text style = {LoginScreenStyle.descStyle2}>Don't worry, your number will not be shared with anyone.</Text>
         <View style={LoginScreenStyle.bottom}>
             <SubmitButton text='Get OTP'
             onTouch={()=>{
-                navigation.navigate("OTP")
+              //  console.log(number)
+              if(number.length==10)
+                navigation.navigate("OTP",number)
+                else Toast.show('Please enter a valid phone number.');
+              
             }} />
         </View> 
     </View>)
@@ -113,7 +123,7 @@ const LoginScreenStyle = StyleSheet.create({
     },
     bottom:{
         position: 'absolute',
-       bottom:Dimensions.get('window').height/7,
+        bottom:Dimensions.get('window').height/7,
         right: 10,
         left: 10
     }
