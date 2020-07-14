@@ -13,7 +13,7 @@ const authenticate= ({ navigation })=>{
 
 const LoginScreen = ({navigation}) => {
     return(
-    <View>
+    <View style={LoginScreenStyle.mainContainer}>
         <Text style = {LoginScreenStyle.titleStyle}>Mobile Verification</Text>
         <Text style = {LoginScreenStyle.descStyle1}>Please enter your mobile number.</Text>
         <View style = {LoginScreenStyle.phoneViewStyle}>
@@ -25,8 +25,7 @@ const LoginScreen = ({navigation}) => {
             />
         </View>
         <Text style = {LoginScreenStyle.descStyle2}>Don't worry, your number will not be shared with anyone.</Text>
-        <View>
-           
+        <View style={LoginScreenStyle.bottom}>
             <SubmitButton text='Get OTP'
             onTouch={()=>{
                 navigation.navigate("OTP")
@@ -112,6 +111,12 @@ const LoginScreenStyle = StyleSheet.create({
         width: 1,
         backgroundColor: 'gray'
     },
+    bottom:{
+        position: 'absolute',
+        bottom: 30,
+        right: 10,
+        left: 10
+    }
 
     
 
