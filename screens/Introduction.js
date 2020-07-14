@@ -82,23 +82,9 @@ const styles= StyleSheet.create({
         backgroundColor: 'rgba(0,0,0,0)'
     },
     image:{
-<<<<<<< HEAD
         height: 300,
         width: 300,
         alignContent: 'center',
     }
   
 });
-=======
-        height:300,
-        width:300,
-        alignSelf: 'center'
-    
-    },
-    text:{
-        fontSize: 20,
-
-
-    }
-});
->>>>>>> 8329e250ef2b3cda7a2c977f30c7daac3825b9fc
