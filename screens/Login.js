@@ -113,7 +113,7 @@ const LoginScreenStyle = StyleSheet.create({
     },
     bottom:{
         position: 'absolute',
-        bottom: 30,
+       bottom:Dimensions.get('window').height/7,
         right: 10,
         left: 10
     }

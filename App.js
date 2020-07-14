@@ -25,12 +25,7 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name='Homescreen' component={LoginScreen} options={{
-          headerShown: false 
-        }}/>
-        <Stack.Screen name='AddAddress' component={AddAddress} options={{
-          headerShown: false
-        }}/>
+       
         <Stack.Screen  name="Introduction" component={Introduction} 
         options={{
           headerShown: false
