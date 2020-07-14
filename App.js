@@ -3,7 +3,7 @@ import * as React from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import * as Notiifications from 'expo-notifications';
+import * as Notifications from 'expo-notifications';
 import Introduction from './screens/Introduction'
 import Otp from './screens/Otp';
 import LoginScreen from './screens/Login';
@@ -41,8 +41,8 @@ function App() {
         <Stack.Screen name = "About" component={About}/>
       </Stack.Navigator>
     </NavigationContainer>
-  );
-  }
+  );  
+}
 
 export default App;
 

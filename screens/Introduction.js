@@ -31,7 +31,7 @@ const slides = [
         title: 'Title 4',
         text: 'Morgue',
         image: require('../assets/4.jpg'),
-        backgroundColor: '#FFFFFF'
+        backgroundColor: '#febe29'
   }];
 
 
@@ -46,11 +46,11 @@ export default class Introduction extends React.Component{
           </View>
         );
       }
-     _onDone = ({navigation}) => {
+     _onDone = () => {
         // User finished the introduction. Show real app through
         // navigation or simply by controlling state
         showRealApp=true;
-        navigation.navigate('Login')
+        this.props.navigation.navigate('Login')
       }
     
       render(){
@@ -76,6 +76,7 @@ const styles= StyleSheet.create({
     title:{
         fontSize: 30,
         textAlign: 'center',
+        fontWeight: '200',
         marginLeft: 20,
         padding: 10,
         marginBottom: 50,
@@ -84,7 +85,12 @@ const styles= StyleSheet.create({
     image:{
         height: 300,
         width: 300,
-        alignContent: 'center',
+        alignSelf: 'center',
+        
+    },
+    text: {
+      fontSize: 20,
+      textAlign: 'center',
+      marginTop: 10
     }
-  
 });
