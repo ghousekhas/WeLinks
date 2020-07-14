@@ -46,10 +46,11 @@ export default class Introduction extends React.Component{
           </View>
         );
       }
-     _onDone = () => {
+     _onDone = ({navigation}) => {
         // User finished the introduction. Show real app through
         // navigation or simply by controlling state
         showRealApp=true;
+        navigation.navigate('Login')
       }
     
       render(){
