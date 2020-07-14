@@ -5,7 +5,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator, Header } from '@react-navigation/stack';
 import * as Notiifications from 'expo-notifications';
 import Introduction from './screens/Introduction'
-import LoginScreen from './screens/Login'
+import Otp from './screens/Otp';
+import LoginScreen from './screens/Login';
+import City from './screens/City';
+import About from './screens/About';
 
 /*function HomeScreen() {
   return (
@@ -20,9 +23,13 @@ const Stack = createStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-       
+      <Stack.Navigator
+      >
+        
         <Stack.Screen name = "Login" component={LoginScreen}/>
+        <Stack.Screen name = "OTP" component={Otp}/>
+        <Stack.Screen name = "City" component={City}/>
+        <Stack.Screen name = "About" component={About}/>
       
 
       </Stack.Navigator>
@@ -32,7 +39,8 @@ function App() {
 
 export default App;
 
-/*export default function App() {
+/*<Stack.Screen name = "Introduction" component={Introduction}/>
+ export default function App() {
   return (
     <View style={styles.container}>
       <Text>Open up App.js to start working on your app!</Text>

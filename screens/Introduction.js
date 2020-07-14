@@ -75,8 +75,6 @@ const styles= StyleSheet.create({
         height: 300,
         width: 300,
         alignContent: 'center',
-    },
-    text:{
-        fontSize: 20
     }
+  
 });

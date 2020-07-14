@@ -2,12 +2,16 @@ import React from 'react';
 import {Text,View,StyleSheet,TextInput, Dimensions} from 'react-native';
 import { Defs } from 'react-native-svg';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator, Header } from '@react-navigation/stack';
+import SubmitButton from './components/SubmitButton';
 
-const authenticate= ()=>{
+const authenticate= ({ navigation })=>{
+    console.log('otp')
+//navigation.navigate('OTP')
+};
 
-}
-
-const LoginScreen = () => {
+const LoginScreen = ({navigation}) => {
     return(
     <View>
         <Text style = {LoginScreenStyle.titleStyle}>Mobile Verification</Text>
@@ -22,9 +26,11 @@ const LoginScreen = () => {
         </View>
         <Text style = {LoginScreenStyle.descStyle2}>Don't worry, your number will not be shared with anyone.</Text>
         <View>
-            <TouchableOpacity style={LoginScreenStyle.button}>
-                <Text style={LoginScreenStyle.buttonText}>Get OTP</Text>
-            </TouchableOpacity>
+           
+            <SubmitButton text='Get OTP'
+            onTouch={()=>{
+                navigation.navigate("OTP")
+            }} />
         </View> 
     </View>)
 };
@@ -43,7 +49,7 @@ const LoginScreenStyle = StyleSheet.create({
         alignSelf: 'center',
         justifyContent: 'flex-start',
         alignItems: 'center',
-        borderColor: 'grey',
+        borderColor: '#5D5D5D',
         borderWidth: 1,
         borderRadius: 5
     },
@@ -64,14 +70,14 @@ const LoginScreenStyle = StyleSheet.create({
     },
     descStyle1: {
         fontSize: 12,
-        color: 'grey',
+        color: '#5D5D5D',
         textAlign: 'center',
         padding: 3,
         marginTop: 15
     },
     descStyle2: {
         fontSize: 12,
-        color: 'grey',
+        color: '#5D5D5D',
         textAlign: 'center',
         padding: 3,
         marginTop: 5
@@ -106,27 +112,6 @@ const LoginScreenStyle = StyleSheet.create({
         width: 1,
         backgroundColor: 'gray'
     },
-    button:{
-        alignSelf: "center",
-        marginTop: 30,
-        backgroundColor: '#00C99D',
-        width: Dimensions.get('window').width-30,
-        height: 45,
-        borderRadius: 5,
-       
-       
-
-    },
-    buttonText: {
-        textAlign: "center",
-        textAlignVertical: "center",
-        alignSelf:"center",
-        color: 'white',
-        fontWeight: '300',
-        ...StyleSheet.absoluteFill
-        
-        
-    }
 
     
 
