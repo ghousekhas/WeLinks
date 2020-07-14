@@ -4,12 +4,10 @@ import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as Notiifications from 'expo-notifications';
-import Introduction from './screens/Introduction'
-<<<<<<< HEAD
+import Introduction from './screens/Introduction';
 import AddAddress from './screens/AddAddress';
-=======
-import LoginScreen from './screens/Login'
->>>>>>> 13e537a7b846a03431596776edec53a9d45ebe10
+import Homescreen from './screens/Homescreen';
+import LoginScreen from './screens/Login';
 
 /*function HomeScreen() {
   return (
@@ -25,7 +23,9 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-<<<<<<< HEAD
+        <Stack.Screen name="Homescreen" component={Homescreen} options={{
+          headerShown: false
+        }}/>
         <Stack.Screen name='AddAddress' component={AddAddress} options={{
           headerShown: false
         }}/>
@@ -33,12 +33,10 @@ function App() {
         options={{
           headerShown: false
         }}/>
-=======
        
         <Stack.Screen name = "Login" component={LoginScreen}/>
       
 
->>>>>>> 13e537a7b846a03431596776edec53a9d45ebe10
       </Stack.Navigator>
     </NavigationContainer>
   );

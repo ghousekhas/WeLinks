@@ -64,9 +64,7 @@ const LoginScreenStyle = StyleSheet.create({
     },
     descStyle1: {
         fontSize: 12,
-        color: 'grey',
-        textAlign: 'center',
-        padding: 3,
+        color: 'gray',
         marginTop: 15
     },
     descStyle2: {
