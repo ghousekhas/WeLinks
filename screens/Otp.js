@@ -1,18 +1,16 @@
-import React, { useState } from 'react';
-// import * as firebase from "firebase/app";
-// import "firebase/auth";
-// import "firebase/analytics";
+import React, { useState,useEffect, useRef } from 'react';
 
 import {Text,View,StyleSheet,TextInput, Dimensions} from 'react-native';
+import { FirebaseRecaptchaVerifierModal } from "expo-firebase-recaptcha";
+import * as firebase from "firebase";
+
 import { Defs } from 'react-native-svg';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import SubmitButton from './components/SubmitButton';
-
-
-
-const Otp = ({route,navigation}) => {
-
-    var firebaseConfig = {
+import SimpleToast from 'react-native-simple-toast';
+import Toast from 'react-native-simple-toast';
+try {
+    firebase.initializeApp({
         apiKey: "AIzaSyAMNh-ci1hhnsvzgCbbuqyuWVzScUr5E54",
         authDomain: "welinks-b80f2.firebaseapp.com",
         databaseURL: "https://welinks-b80f2.firebaseio.com",
@@ -21,51 +19,155 @@ const Otp = ({route,navigation}) => {
         messagingSenderId: "887049508481",
         appId: "1:887049508481:web:db88dbac3fd71d2ebd9f80",
         measurementId: "G-B3532FWL44"
-      };
-   //   firebase.initializeApp(firebaseConfig);
-   const num = route.params;
-   const numDisplay = num.charAt(0) + 'XXXXXXXX' + num.charAt(9)
+      
+    });
+  } catch (err) {
+    // ignore app already initialized error in snack
+  }
 
-//    const [one,sOne] = useState('');
-//    const[two,sTwo] = useState('')
-//    const[three,sThree] = useState('')
 
-//    const[four,sFour] = useState('')
-  
-    return(<View style = {style.mainContainer}>
-        <Text style={style.text}>We sent a '4-digit OTP' on {"\n"}     +91 {numDisplay} </Text>
+
+const Otp = ({route,navigation}) => {
+    const recaptchaVerifier = React.useRef(null);
+    var num = route.params;
+    num = '+91'+num
+    
+    const numDisplay = num.charAt(0) + 'XXXXXXXX' + num.charAt(9)
+    const [verificationId, setVerificationId] = React.useState();
+   const [P1,setP1] = React.useState();
+   const [P2,setP2] = React.useState();
+   const [P3,setP3] = React.useState();
+   const [P4,setP4] = React.useState();
+   const [P5,setP5] = React.useState();
+   const [P6,setP6] = React.useState();
+
+   const i1 = useRef();
+   const i2 = useRef();
+   const i3 = useRef();
+   const i4 = useRef();
+   const i5 = useRef();
+   const i6 = useRef();
+   const firebaseConfig = firebase.apps.length ? firebase.app().options : undefined;
+ 
+    useEffect(() => {
+        async function sendOTP(){
+    
+       try {
+        const phoneProvider = new firebase.auth.PhoneAuthProvider();
+        const verificationId = await phoneProvider.verifyPhoneNumber(
+          num,
+          recaptchaVerifier.current
+        );
+        setVerificationId(verificationId);
+        Toast.show('OTP sent')
+       
+      } catch (err) {
+          Toast.show(err.message)
+      }
+    }
+      sendOTP();
+      },[]);
+
+  return(<View style = {style.mainContainer}>
+        <Text style={style.text}>We sent a '6-digit OTP' on {"\n"}     +91 {numDisplay} </Text>
         <Text style={style.desc}>Please enter the OTP below to complete the verification process. </Text>
        <View style = {style.view}>
        <TextInput style={style.input}  maxLength = {1}
                 keyboardType = {"number-pad"}
-                // onChangeText={(one) => {
-                //     sOne(one)
-                    
-                    
-                // }}
+                ref={i1}
+                onChangeText = {(P1) => {
+                    setP1(P1);
+                    if(P1 != '')
+                    i2.current.focus()
+                }}
                
                     
                 />
        <TextInput style={style.input} maxLength = {1}
                 keyboardType = {"number-pad"}
+                ref={i2}
+                onChangeText = {(P2) => {
+                    setP2(P2);
+                    if(P2 != '')
+                    i3.current.focus()
+                    else if(P2=='')
+                    i1.current.focus()
+                }}
+               
               
                 />
        <TextInput style={style.input} maxLength = {1}
                 keyboardType = {"number-pad"}
+                ref={i3}
+                
+                onChangeText = {(P3) => {
+                    setP3(P3);
+                    if(P3 != '')
+                    i4.current.focus()
+                    else if(P3 =='')
+                    i2.current.focus()
+                }}
                 
                 />
        <TextInput style={style.input} maxLength = {1}
                 keyboardType = {"number-pad"}
+                ref={i4}
+                onChangeText = {(P4) => {
+                    setP4(P4);
+                    if(P4 != '')
+                    i5.current.focus()
+                    else if(P4=='')
+                    i3.current.focus()
+                }}
+                
+                />
+         <TextInput style={style.input} maxLength = {1}
+                keyboardType = {"number-pad"}
+                ref={i5}
+                onChangeText = {(P5) => {
+                    setP5(P5);
+                    if(P5 != '')
+                    i6.current.focus()
+                    else if(P5=='')
+                    i4.current.focus()
+                }}
+                
+                />
+                 <TextInput style={style.input} maxLength = {1}
+                keyboardType = {"number-pad"}
+                ref={i6}
+                onChangeText = {(P6) => {
+                    setP6(P6);
+                    if(P6=='')
+                    i5.current.focus()
+                }}
                 
                 />
 
+
        </View>
+       <FirebaseRecaptchaVerifierModal
+        ref={recaptchaVerifier}
+        firebaseConfig={firebaseConfig}
+      />
        <Text style={style.resend}>Resend OTP </Text>
+       
        <SubmitButton text='Submit'
-           onTouch={()=>{
-              // console.log('Your number was' + num)
-                 navigation.navigate('City')
-           }}
+            onTouch={async () => {
+          try {
+              const cred = P1+P2+P3+P4+P5+P6
+             // console.log(cred)
+            const credential = firebase.auth.PhoneAuthProvider.credential(
+              verificationId,
+              cred
+            );
+            await firebase.auth().signInWithCredential(credential);
+           Toast.show('Authenticated')
+           navigation.navigate('City')
+          } catch (err) {
+           Toast.show(err.message)
+          }
+        }}
        />
      
     </View>)
@@ -78,7 +180,7 @@ const style = StyleSheet.create({
     mainContainer: {
         width: Dimensions.get('window').width,
         height: Dimensions.get('window').height,
-        padding: 10
+        padding: 20
 
     },
     text:{
@@ -114,8 +216,8 @@ view:{
     flexDirection: "row",
     justifyContent: "space-around",
     marginTop: 15,
-    margin: 50,
-
+    margin:10
+   
     
     
 },

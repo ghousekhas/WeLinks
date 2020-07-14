@@ -35,8 +35,10 @@ const LoginScreen = ({navigation}) => {
             <SubmitButton text='Get OTP'
             onTouch={()=>{
               //  console.log(number)
-              if(number.length==10)
+              if(number.length==10){
+              
                 navigation.navigate("OTP",number)
+              }
                 else Toast.show('Please enter a valid phone number.');
               
             }} />

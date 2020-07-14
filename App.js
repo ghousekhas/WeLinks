@@ -11,6 +11,7 @@ import City from './screens/City';
 import About from './screens/About';
 import AddAddress from './screens/AddAddress';
 import Homescreen from './screens/Homescreen';
+import testOtp from './screens/testOtp';
 /*function HomeScreen() {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -31,6 +32,7 @@ function App() {
           headerShown: false
         }}/>
         <Stack.Screen name = "Login" component={LoginScreen}/>
+        <Stack.Screen name = "testOtp" component={testOtp}/>
         <Stack.Screen name = "OTP" component={Otp}/>
         <Stack.Screen name = "City" component={City}/>
         <Stack.Screen name = "About" component={About}/>
