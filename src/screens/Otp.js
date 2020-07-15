@@ -6,9 +6,10 @@ import * as firebase from "firebase";
 
 import { Defs } from 'react-native-svg';
 import { TouchableOpacity } from 'react-native-gesture-handler';
-import SubmitButton from './components/SubmitButton';
+
 import SimpleToast from 'react-native-simple-toast';
 import Toast from 'react-native-simple-toast';
+import SubmitButton from '../components/SubmitButton';
 try {
     firebase.initializeApp({
         apiKey: "AIzaSyAMNh-ci1hhnsvzgCbbuqyuWVzScUr5E54",

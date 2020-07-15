@@ -4,14 +4,12 @@ import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as Notifications from 'expo-notifications';
-import Introduction from './screens/Introduction'
-import Otp from './screens/Otp';
-import LoginScreen from './screens/Login';
-import City from './screens/City';
-import About from './screens/About';
-import AddAddress from './screens/AddAddress';
-import Homescreen from './screens/Homescreen';
-import testOtp from './screens/testOtp';
+import Introduction from './src/screens/Introduction'
+import Otp from './src/screens/Otp';
+import LoginScreen from './src/screens/Login'
+import City from './src/screens/City';
+import About from './src/screens/About';
+
 /*function HomeScreen() {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -32,7 +30,7 @@ function App() {
           headerShown: false
         }}/>
         <Stack.Screen name = "Login" component={LoginScreen}/>
-        <Stack.Screen name = "testOtp" component={testOtp}/>
+       
         <Stack.Screen name = "OTP" component={Otp}/>
         <Stack.Screen name = "City" component={City}/>
         <Stack.Screen name = "About" component={About}/>

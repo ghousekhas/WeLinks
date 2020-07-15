@@ -9,28 +9,28 @@ const slides = [
       key: 'one',
       title: 'Some lorem ipsum dolor amet  1',
       text: 'Description.\nSay something cool',
-      image: require('../assets/1.jpg'),
+      image: require('../../assets/1.jpg'),
       backgroundColor: '#59b2ab',
     },
     {
       key: 'two',
       title: 'Title 2',
       text: 'Refrigerator',
-      image: require('../assets/2.jpg'),
+      image: require('../../assets/2.jpg'),
       backgroundColor: '#febe29',
     },
     {
       key: 'three',
       title: 'Title 3',
       text: 'Freezer',
-      image: require('../assets/3.jpg'),
+      image: require('../../assets/3.jpg'),
       backgroundColor: '#22bcb5',
     },
     {
         key: 'four',
         title: 'Title 4',
         text: 'Morgue',
-        image: require('../assets/4.jpg'),
+        image: require('../../assets/4.jpg'),
         backgroundColor: '#febe29'
   }];
 

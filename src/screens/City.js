@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import {Text,View,StyleSheet,TextInput, Dimensions} from 'react-native';
 import { RadioButton } from 'react-native-paper';
-import SubmitButton from './components/SubmitButton';
+import SubmitButton from '../components/SubmitButton';
+
 
 const City = ({navigation}) =>{
     const [value, setValue] = useState('Bangalore');

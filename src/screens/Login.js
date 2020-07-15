@@ -4,8 +4,9 @@ import { Defs } from 'react-native-svg';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator, Header } from '@react-navigation/stack';
-import SubmitButton from './components/SubmitButton';
+
 import Toast from 'react-native-simple-toast';
+import SubmitButton from '../components/SubmitButton';
 
 const authenticate= ({ navigation })=>{
    // console.log('otp')

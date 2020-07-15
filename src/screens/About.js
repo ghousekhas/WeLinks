@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import {Text,View,StyleSheet,TextInput, Dimensions} from 'react-native';
 import { RadioButton } from 'react-native-paper';
-import SubmitButton from './components/SubmitButton';
-import TextBox from './components/TextBox';
+import SubmitButton from '../components/SubmitButton';
+import TextBox from '../components/TextBox';
 import {FontAwesome5} from '@expo/vector-icons'
 
 const About = () =>{
@@ -22,7 +22,8 @@ const style = StyleSheet.create({
     mainContainer: {
         width: Dimensions.get('window').width,
         height: Dimensions.get('window').height,
-        padding: 10
+        padding: 10,
+        backgroundColor: '#F9F9F9'
 
     },
     text:{
