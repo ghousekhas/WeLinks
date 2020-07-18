@@ -5,10 +5,20 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as Notifications from 'expo-notifications';
 import Introduction from './src/screens/Introduction'
-import Otp from './src/screens/Otp';
+
 import LoginScreen from './src/screens/Login'
 import City from './src/screens/City';
 import About from './src/screens/About';
+import HomeScreen from './src/screens/Homescreen'
+
+
+import Date from './src/screens/Date';
+
+import { Calendar } from 'react-native-calendars';
+import SelectDate from './src/screens/SelectDate';
+import DateScreen from './src/screens/DateScreen';
+
+
 
 /*function HomeScreen() {
   return (
@@ -23,17 +33,24 @@ const Stack = createStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-       
+      <Stack.Navigator initialRouteName = "SelectDate">
+      <Stack.Screen name = "SelectDate" component={SelectDate}/>
         <Stack.Screen  name="Introduction" component={Introduction} 
         options={{
           headerShown: false
         }}/>
+       
         <Stack.Screen name = "Login" component={LoginScreen}/>
        
-        <Stack.Screen name = "OTP" component={Otp}/>
         <Stack.Screen name = "City" component={City}/>
         <Stack.Screen name = "About" component={About}/>
+        <Stack.Screen name = "Homescreen" component={HomeScreen}/>
+        <Stack.Screen name = "Date" component={Date}/>
+        <Stack.Screen name = "DateScreen" component={DateScreen}/>
+
+        
+
+        
       </Stack.Navigator>
     </NavigationContainer>
   );  

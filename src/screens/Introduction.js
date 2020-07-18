@@ -10,28 +10,28 @@ const slides = [
       title: 'Some lorem ipsum dolor amet  1',
       text: 'Description.\nSay something cool',
       image: require('../../assets/1.jpg'),
-      backgroundColor: '#59b2ab',
+      backgroundColor: '#00C99D',
     },
     {
       key: 'two',
       title: 'Title 2',
       text: 'Refrigerator',
       image: require('../../assets/2.jpg'),
-      backgroundColor: '#febe29',
+      backgroundColor: '#00C99D',
     },
     {
       key: 'three',
       title: 'Title 3',
       text: 'Freezer',
       image: require('../../assets/3.jpg'),
-      backgroundColor: '#22bcb5',
+      backgroundColor: '#00C99D',
     },
     {
         key: 'four',
         title: 'Title 4',
         text: 'Morgue',
         image: require('../../assets/4.jpg'),
-        backgroundColor: '#febe29'
+        backgroundColor: '#00C99D'
   }];
 
 
@@ -91,6 +91,7 @@ const styles= StyleSheet.create({
     text: {
       fontSize: 20,
       textAlign: 'center',
-      marginTop: 10
+      marginTop: 10,
+      color: '#000000'
     }
 });

@@ -11,7 +11,7 @@ const TextBox = ({title,hint,icon}) => {
        <TextInput style={style.input}
        placeholder={hint}></TextInput>
        <View style={style.icon}>
-       <FontAwesome5 name={icon} size={30} color='#5D5D5D' />
+       <FontAwesome5 name={icon} size={30} color='#5D5D5D' backgroundColor='white' />
        </View>
      
        </View>
@@ -29,7 +29,8 @@ const style = StyleSheet.create({
     },
    text:{
         fontSize: 15,
-        fontWeight: '200'
+        fontWeight: '200',
+        backgroundColor: '#F9F9F9'
 
    },
    input: {
@@ -38,6 +39,7 @@ const style = StyleSheet.create({
     
     flex: 5,
     marginStart: 10,
+    backgroundColor: 'white'
    
    
     
@@ -50,6 +52,7 @@ const style = StyleSheet.create({
     height: 45,
     width: Dimensions.get('window').width-30,
     alignSelf: 'center',
+    backgroundColor: 'white',
    
   
     borderColor: '#5D5D5D',

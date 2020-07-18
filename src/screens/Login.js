@@ -38,7 +38,7 @@ const LoginScreen = ({navigation}) => {
               //  console.log(number)
               if(number.length==10){
               
-                navigation.navigate("OTP",number)
+                navigation.navigate("City",number)
               }
                 else Toast.show('Please enter a valid phone number.');
               
@@ -52,7 +52,8 @@ const LoginScreenStyle = StyleSheet.create({
     mainContainer:{
         flexDirection: 'column',
         height: Dimensions.get('window').height,
-        width: Dimensions.get('window').width
+        width: Dimensions.get('window').width,
+        backgroundColor: '#F9F9F9'
     },
     phoneViewStyle:{
         flexDirection: 'row',
@@ -62,6 +63,7 @@ const LoginScreenStyle = StyleSheet.create({
         justifyContent: 'flex-start',
         alignItems: 'center',
         borderColor: '#5D5D5D',
+        backgroundColor: 'white',
         borderWidth: 1,
         borderRadius: 5
     },

@@ -113,6 +113,7 @@ const Otp = ({route,navigation}) => {
        <TextInput style={style.input} maxLength = {1}
                 keyboardType = {"number-pad"}
                 ref={i4}
+                
                 onChangeText = {(P4) => {
                     setP4(P4);
                     if(P4 != '')
@@ -166,7 +167,7 @@ const Otp = ({route,navigation}) => {
            Toast.show('Authenticated')
            navigation.navigate('City')
           } catch (err) {
-           Toast.show(err.message)
+           Toast.show('Please enter OTP')
           }
         }}
        />
@@ -186,7 +187,7 @@ const style = StyleSheet.create({
     },
     text:{
         fontSize: 18,
-        fontWeight: 'bold',
+        fontWeight: '300',
         color: 'black',
         textAlign: "center",
         marginTop: 10,
@@ -203,9 +204,10 @@ const style = StyleSheet.create({
 input:{
     height: 45,
     width: 45,
-    borderWidth: 1.5,
-    borderRadius: 5,
+    borderWidth: 1,
+    borderRadius: 7,
     borderColor: '#5D5D5D',
+    backgroundColor: '#F9F9F9',
     marginStart: 10,
     alignSelf:"center",
     fontSize: 20,
@@ -216,8 +218,12 @@ input:{
 view:{
     flexDirection: "row",
     justifyContent: "space-around",
+    padding: 10,
+    
+    
     marginTop: 15,
-    margin:10
+    
+    
    
     
     
@@ -227,7 +233,8 @@ resend: {
     color: '#00C99D',
     fontWeight: 'bold',
     textAlign: 'center',
-    fontSize: 15
+    fontSize: 15,
+    marginTop: 10
 
 }
 });
