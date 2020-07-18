@@ -17,6 +17,8 @@ import Date from './src/screens/Date';
 import { Calendar } from 'react-native-calendars';
 import SelectDate from './src/screens/SelectDate';
 import DateScreen from './src/screens/DateScreen';
+import SubscriptionScreen from './src/screens/SubscriptionScreen';
+import Cart from './src/screens/Cart';
 
 
 
@@ -33,7 +35,7 @@ const Stack = createStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName = "SelectDate">
+      <Stack.Navigator initialRouteName = "Cart">
       <Stack.Screen name = "SelectDate" component={SelectDate}/>
         <Stack.Screen  name="Introduction" component={Introduction} 
         options={{
@@ -47,6 +49,9 @@ function App() {
         <Stack.Screen name = "Homescreen" component={HomeScreen}/>
         <Stack.Screen name = "Date" component={Date}/>
         <Stack.Screen name = "DateScreen" component={DateScreen}/>
+        <Stack.Screen name = "SubscriptionScreen" component={SubscriptionScreen}/>
+        <Stack.Screen name = "Cart" component={Cart}
+        />
 
         
 
