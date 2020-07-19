@@ -3,9 +3,10 @@ import {View, StyleSheet, Text, Dimensions} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import Item from '../components/Item';
 import SubmitButton from '../components/SubmitButton';
+import Button from '../components/Button';
 
 
-const SubscriptionScreen = () => {
+const SubscriptionScreen = ({onCalendarOpen,dateResult,goTo}) => {
     const[number,setNumber] = useState(1)
 return(<View>
     <Item name='Thirumala Double Toned Milk (500ml) ' quantity='1 Ptk' price='200' bought='30 Pkts' />
@@ -109,12 +110,16 @@ return(<View>
 
     </View>
     <View style={style.line}/>
-    <View style={style.view}>
+    <View style={style.selectDate}>
     <Text style={style.greyText}>Start Date</Text>
-    <Text style={style.text}>Tomorrow</Text>
+    <View style={style.button}>
+    <Button text='Change' onTouch={onCalendarOpen}/>
+    </View>
+    
+    <Text style={style.selected}>{dateResult}</Text>
 
     </View>
-    <SubmitButton text='Subscribe'/>
+    <SubmitButton text='Subscribe' onTouch={goTo}/>
 
 </View>)
 
@@ -215,6 +220,31 @@ const style = StyleSheet.create({
 
 
     },
+    selectDate:{
+        flexDirection: 'row',
+        padding: 5,
+        height: Dimensions.get('window').height/8,
+    
+        
+        
+        marginStart: 10,
+    },
+    selected:{
+        fontSize: 17,
+        
+        fontWeight: 'bold',
+        marginTop: 8,
+        position : 'absolute',
+        marginStart: 30,
+        marginTop: 35
+
+    },
+    button:{
+        alignItems: 'flex-end',
+        flexDirection: 'column',
+        width: Dimensions.get('window').width-120,
+        marginTop: 3
+    }
     
 });
 

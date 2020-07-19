@@ -1,6 +1,6 @@
 
 import * as React from 'react';
-import { View, Text } from 'react-native';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import * as Notifications from 'expo-notifications';
@@ -12,14 +12,13 @@ import About from './src/screens/About';
 import HomeScreen from './src/screens/Homescreen'
 
 
-import Date from './src/screens/Date';
-
-import { Calendar } from 'react-native-calendars';
-import SelectDate from './src/screens/SelectDate';
 import DateScreen from './src/screens/DateScreen';
-import SubscriptionScreen from './src/screens/SubscriptionScreen';
+
 import Cart from './src/screens/Cart';
-import ServiceProviders from './src/screens/ServiceProviders';
+import MilkVendors from './src/screens/MilkVendors';
+import PaperVendors from './src/screens/PaperVendors';
+import SubscribeScreen from './src/screens/SubscribeScreen';
+import VendorScreen from './src/screens/VendorScreen';
 
 
 
@@ -36,8 +35,8 @@ const Stack = createStackNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName = "Introduction">
-      <Stack.Screen name = "SelectDate" component={SelectDate}/>
+      <Stack.Navigator initialRouteName = "Homescreen">
+     
         <Stack.Screen  name="Introduction" component={Introduction} 
         options={{
           headerShown: false
@@ -48,11 +47,17 @@ function App() {
         <Stack.Screen name = "City" component={City}/>
         <Stack.Screen name = "About" component={About}/>
         <Stack.Screen name = "Homescreen" component={HomeScreen}/>
-        <Stack.Screen name = "Date" component={Date}/>
+        
+        
+       
+        <Stack.Screen name = "MilkVendors" component={MilkVendors}/>
+        <Stack.Screen name = "PaperVendors" component={PaperVendors}/>
+        <Stack.Screen name = "VendorScreen" component={VendorScreen}/>
+        <Stack.Screen name = "SubscribeScreen" component={SubscribeScreen}/>
         <Stack.Screen name = "DateScreen" component={DateScreen}/>
-        <Stack.Screen name = "SubscriptionScreen" component={SubscriptionScreen}/>
+       
         <Stack.Screen name = "Cart" component={Cart}/>
-        <Stack.Screen name = "ServiceProviders" component={ServiceProviders}/>
+       
 
 
         

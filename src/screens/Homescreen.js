@@ -47,12 +47,15 @@ export default class Homescreen extends React.Component{
                 <View style={styles.horizontalview}>
                     <TouchableOpacity style={styles.menuitem}
                     onPress={() => {
-                            this.props.navigation.navigate('CalendarScreen')
+                            this.props.navigation.navigate('MilkVendors')
                     }}>
                         <Image style={styles.menuimage} source={this.images.milk} />
                         <Text style={styles.menutext}>{this.text.milk}</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.menuitem}>
+                    <TouchableOpacity style={styles.menuitem}
+                    onPress={() => {
+                            this.props.navigation.navigate('PaperVendors')
+                    }}>
                         <Image style={styles.menuimage} source={this.images.news}/>
                         <Text style={styles.menutext}>{this.text.news}</Text>
                     </TouchableOpacity>

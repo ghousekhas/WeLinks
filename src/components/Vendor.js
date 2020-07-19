@@ -1,15 +1,14 @@
 import React, { useState } from 'react';
 import {View, StyleSheet, Text, Dimensions} from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
+import Button from './Button';
 
 
-const Vendor = ({name,brands,stars,reviews}) => {
+const Vendor = ({name,brands,stars,reviews,onSelected}) => {
     return(<View style={style.container}>
     <View style={style.top}>
         <Text style={style.name}>{name}</Text>
-        <TouchableOpacity style={style.button}>
-            <Text style={{color:'#00C99D',fontSize: 12}}>Select</Text>
-        </TouchableOpacity>
+       <Button text='Select' onTouch={onSelected} />
         </View>
 
         <View style = {{flexDirection: 'row'}}>
@@ -44,9 +43,10 @@ const style = StyleSheet.create({
         borderColor: '#00C99D',
         padding: 1,
         paddingHorizontal: 30,
+        paddingVertical: 2,
         alignItems: 'flex-end',
         marginHorizontal:10,
-        marginVertical: -3
+        marginVertical: -2
        
        
 
@@ -66,6 +66,7 @@ const style = StyleSheet.create({
     
     brands:{
         color: 'gray',
+        flex: 1,
         
         marginTop: 7,
 

@@ -19,6 +19,8 @@ const Date = ({onSet}) => {
 
 const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"];
+
+  
     
     const [selected, setSelected] = useState(thisDay);
     const [month, setMonth] = useState(monthNames[parseInt(thisDay.charAt(5)+thisDay.charAt(6))])
