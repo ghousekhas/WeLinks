@@ -9,7 +9,7 @@ const Cart = () => {
     return(<View style={style.container}>
     <Text style={style.title}>Subscription Orders</Text>
         <SubscriptionOrder name='Thirumala Double Toned Milk (500ml) '
-         quantity='1 Ptk' price='200'  bought='30 Pkts' />
+         quantity='1 Pkt' price='200'  bought='30 Pkts' />
 
          <View style={style.gray}>
              <Text style={style.text}>Total number of deliveries may be adjusted as per market rates.</Text>
@@ -53,17 +53,20 @@ const style = StyleSheet.create({
         margin: 10,
         marginVertical: 15
     },
+
     title:{
         fontSize: 20,
         margin: 5,
         fontWeight: 'bold'
     },
+
     gray: {
         marginTop: 10,
        backgroundColor: '#e0e0e0',
         borderRadius: 10,
         height: Dimensions.get('window').height/12,
     },
+
     gray1: {
         marginTop: 10,
        backgroundColor: '#e0e0e0',
@@ -72,10 +75,12 @@ const style = StyleSheet.create({
         elevation: -5,
         height: Dimensions.get('window').height/12,
     },
+
     text: {
         padding: 10,
         color: 'gray',
     },
+
     coupon: {
         marginStart: 50,
         fontWeight: '800',
